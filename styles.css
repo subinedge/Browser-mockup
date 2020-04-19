@@ -1,0 +1,181 @@
+body, html {
+  margin: 0;
+  background: #2980b9;
+  height: 100%;
+  width: 100%;
+  font-family: 'Raleway';
+  overflow: hidden;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.browser {
+  width: 70%;
+  height: 600px;
+  background: #ddd;
+  margin: 20px auto;
+  border-radius: 8px;
+  position: relative;
+  transition: all 0.33s ease-in-out;
+}
+
+.browser_bar {
+  width: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  height: 30px;
+  background: #2c3e50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.33s ease-in-out;
+}
+
+.browser_bar_btns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.browser_bar_btn {
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
+  background-color: #e74c3c;
+  margin-right: 10px;
+}
+
+/* now lets design the active tab */
+
+.browser_bar_tab {
+  border-bottom: 30px solid #3e5367;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  height: 0;
+  width: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+/* add some margin */
+
+/* cursor pointer on hover icons */
+
+.browser_bar_btn:hover {
+  cursor: pointer;
+}
+
+/* color change  */
+
+.browser_bar_btn--mini {
+  background-color: #27ae60;
+}
+
+.browser_bar_btn--resize {
+  background-color: #f1c40f;
+}
+
+.browser_body {
+  overflow-y: scroll;
+  height: calc(100% - 30px);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.browser_body_content {
+  width: 90%;
+  min-height: 20px;
+  border-radius: 20px;
+  background-color: #ccc;
+  margin-top: 40px;
+  display: flex;
+}
+
+.browser_body_title {
+  margin-top: 50px;
+  font-size: 30px;
+  color: #444;
+  font-weight: bold;
+}
+
+.browser_body_content:nth-child(1) {
+  margin-top: 50px;
+}
+
+.browser_body_content:last-child {
+  margin-bottom: 50px;
+}
+
+/* lets add custom scrollbar  */
+
+.browser_body::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+.browser_body::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+}
+
+.browser_body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #bbb;
+}
+
+.browser_button {
+  /* absolute is for positioning the button in center */
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 30px;
+  width: 200px;
+  background: salmon;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  /* to provide a smooth scaling */
+  transform: scale(0);
+  opacity: 0;
+
+  /* cursor */
+}
+
+.browser_button:hover {
+  cursor: pointer;
+}
+
+.hide {
+  opacity: 0;
+  transform: scale(0);
+  /* it works */
+}
+
+.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.mini {
+  /* browser should should like a thumbnail on minimizing */
+  transform: scale(0.2);
+  margin-top: calc(100% - 400px);
+}
+
+.max {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+}
